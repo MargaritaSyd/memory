@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { MemoryCards } from "./components/Card/MemoryCards";
+import winner from "./assets/winner.gif";
 import imageGame1 from "./assets/planet-game1.png";
 import imageGame2 from "./assets/planet-game2.png";
 import imageGame3 from "./assets/planet-game3.png";
@@ -26,6 +27,7 @@ function App() {
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
   const [disabled, setDisabled] = useState(false);
+  const [won, setWon] = useState(true);
 
   const shuffleCards = () => {
     const shuffledCards = [...cardImages, ...cardImages]
@@ -66,23 +68,35 @@ function App() {
       }
     }
   }, [choiceOne, choiceTwo])
+
+  useEffect(() => {
+    const matches = cards.map((card) => card.matched)
+    setWon(!matches.includes(false));
+  }, [cards]);
   return (
     <div className="App">
-      <h1>Magic Match</h1>
+      <h1>Space Match</h1>
       <button onClick={shuffleCards}>New Game</button>
-      <div className='card-grid'>
-      {
-        cards.map((card) => {
-          return (
-            <MemoryCards
-              key={card.id}
-              card={card}
-              handleChoice={handleChoice}
-              flipped={card === choiceOne || card === choiceTwo || card.matched}
-              disabled={disabled}
-            />
-        )})
-      }
+      <h2>{`Your turns: ${turns}`}</h2>
+      <div className={`card ${won ? "flipped" : ""}`}>
+        <div className='card-grid front'>
+        {
+          cards.map((card) => {
+            return (
+              <MemoryCards
+                key={card.id}
+                card={card}
+                handleChoice={handleChoice}
+                flipped={card === choiceOne || card === choiceTwo || card.matched}
+                disabled={disabled}
+              />
+          )})
+        }
+        </div>
+        <div className='back winner-text'>
+          <h1 style={{ position: "absolute" }}>You did it!</h1>
+          <img className="winner-image" src={winner} alt="winner"/>
+        </div>
       </div>
     </div>
   );

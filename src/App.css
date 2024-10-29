@@ -20,8 +20,52 @@ button:hover {
 }
 
 .card-grid {
-  margin-top: 40px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
+  padding: 15px;
+}
+
+.card {
+  position: relative;
+}
+.card img {
+  width: 100%;
+  display: block;
+  border: 2px solid #fff;
+  border-radius: 6px;
+}
+
+.card .front {
+  transform: rotateY(0deg);
+  transition: ease-in-out 0.2s;
+  position: absolute;
+}
+
+.flipped .front {
+  transform: rotateY(90deg);
+  transition-delay: 0.2s;
+}
+
+.card .back {
+  transform: rotateY(90deg);
+  transition: ease-in-out 0.2s;
+  transition-delay: 0.2s;
+}
+
+.flipped .back {
+  transform: rotateY(0deg);
+  transition: ease-in-out 0.2s;
+  transition-delay: 0s;
+}
+.winner-text {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.winner-image {
+  width: 80% !important;
+  border: none !important;
+  z-index: -10 !important;
 }

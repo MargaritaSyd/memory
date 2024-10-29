@@ -1,7 +1,7 @@
 
 import bird from "../../assets/bird.png";
 
-import './MemoryCard.css'
+// import './MemoryCard.css'
 
 export const MemoryCards = ({ card, handleChoice, flipped, disabled }) => {
 
@@ -10,8 +10,6 @@ export const MemoryCards = ({ card, handleChoice, flipped, disabled }) => {
       handleChoice(card);
     }
   }
-
-  console.log(flipped)
   return (
     <div className='card'>
       <div className={!flipped ? "flipped" : ""}>
