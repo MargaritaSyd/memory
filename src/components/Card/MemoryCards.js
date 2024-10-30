@@ -1,8 +1,6 @@
 
 import bird from "../../assets/bird.png";
 
-// import './MemoryCard.css'
-
 export const MemoryCards = ({ card, handleChoice, flipped, disabled }) => {
 
   const handleClick = () => {

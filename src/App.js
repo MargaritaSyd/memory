@@ -11,7 +11,6 @@ import imageGame6 from "./assets/planet-game6.png";
 import './App.css';
 import { useEffect } from "react";
 
-
 const cardImages = [
   {"src": imageGame1, matched: false},
   {"src": imageGame2, matched: false},
@@ -27,7 +26,7 @@ function App() {
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
   const [disabled, setDisabled] = useState(false);
-  const [won, setWon] = useState(true);
+  const [won, setWon] = useState(false);
 
   const shuffleCards = () => {
     const shuffledCards = [...cardImages, ...cardImages]
@@ -36,6 +35,7 @@ function App() {
 
     setCards(shuffledCards);
     setTurns(0);
+    setWon(false);
   }
 
   const handleChoice = (card) => {
@@ -64,14 +64,16 @@ function App() {
         })
         resetTurn();
       } else {
-        setTimeout(() => resetTurn(), 1000);
+        setTimeout(() => resetTurn(), 1500);
       }
     }
   }, [choiceOne, choiceTwo])
 
   useEffect(() => {
     const matches = cards.map((card) => card.matched)
-    setWon(!matches.includes(false));
+    if (matches.length > 0 && !matches.includes(false)){
+      setTimeout(() => setWon(true), 1000);
+    }
   }, [cards]);
   return (
     <div className="App">
