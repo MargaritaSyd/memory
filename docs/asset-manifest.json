@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.fb54a7bb.css",
-    "main.js": "/static/js/main.4d1f0743.js",
+    "main.js": "/static/js/main.b2540eb3.js",
     "static/media/winner.gif": "/static/media/winner.1b1d967a8b1023f2243f.gif",
     "static/media/planet-game5.png": "/static/media/planet-game5.a7cf27b5e5c69bd79755.png",
     "static/media/planet-game3.png": "/static/media/planet-game3.c2dfbe2f73a7e3fc98d2.png",
@@ -12,10 +12,10 @@
     "static/media/planet-game2.png": "/static/media/planet-game2.b3bf7a1c50c921752f3f.png",
     "index.html": "/index.html",
     "main.fb54a7bb.css.map": "/static/css/main.fb54a7bb.css.map",
-    "main.4d1f0743.js.map": "/static/js/main.4d1f0743.js.map"
+    "main.b2540eb3.js.map": "/static/js/main.b2540eb3.js.map"
   },
   "entrypoints": [
     "static/css/main.fb54a7bb.css",
-    "static/js/main.4d1f0743.js"
+    "static/js/main.b2540eb3.js"
   ]
 }
