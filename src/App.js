@@ -11,7 +11,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path={"/memory-game"} element={<MemoryGame />} />
+        <Route path={"/"} element={<MemoryGame />} />
       </Routes>
     </BrowserRouter>
   );
